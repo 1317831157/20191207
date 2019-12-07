@@ -1,0 +1,170 @@
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,hr,td,input,textarea{
+	margin:0;
+	padding:0;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border:0;
+}
+body{
+	font-family: "微软雅黑";
+	/* background-color: aqua; */
+}
+.header{
+	width: 1255px;
+	height: 90px;
+	background-color:#323232;
+	margin: 0  auto;
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+}
+.header h2{
+	color:#dddddd;
+}
+.header  input{
+	width: 726px;
+	height: 55px;
+	background-color:#ededed;
+	border-radius: 10px;
+	font-size: 20px;
+	color:#757582;
+	border: none;
+}
+/* section */
+.section{
+	width: 1255px;
+	height: 500px;
+	background-color:#ededed;
+	margin: 0  auto;
+}
+.section .box1  {
+	padding-top:20px ;
+	width: 1255px;
+	height: auto;
+}
+.section .box1  .do_num{
+	display: block;
+	float: right;
+	font-size:20px;
+	font-weight: 600;
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	line-height:30px ;
+	background-color:#e6e6fa;
+	color: #666666;
+}
+
+.section .box1 .item{
+	width: 1198px;
+	height: auto;
+	margin: 0 auto;
+	
+}
+.section .box1 .item .text1{
+	width: 1198px;
+	height: 60px;
+	background-color:#ffffff;
+	margin: 0 auto;
+	border-radius:10px ;
+	overflow: hidden;
+
+	margin-bottom: 10px;
+}
+.section .box1 .item .smallbox{
+	width: 10px;
+	height:60px;
+	background-color:#629a9c;
+	float: left;
+}
+.section .box1 .item .ck1{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 20px;
+	margin-left:20px;
+}
+.section .box1 .item .word{
+	font-size:18px;
+	float: left;
+	margin-top: 15px;
+	margin-left:20px;
+}
+.section .box1 .item .img_1{
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: 20px;
+	margin-right:20px;
+}
+
+.section .box2  {
+	padding-top:20px ;
+	width: 1255px;
+	height: auto;
+	/* background-color:skyblue; */
+}
+.section .box2  .done_num{
+	display: block;
+	float: right;
+	font-size:20px;
+	font-weight: 600;
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	line-height:30px ;
+	background-color:#e6e6fa;
+	color: #666666;
+}
+.section .box2  .title{
+	overflow: hidden;
+	width: 1255px;
+	height: auto;
+}
+
+.section .box2 .list .donebox{
+	width: 10px;
+	height:60px;
+	background-color:#b3b3b3;
+	float: left;
+}
+.section .box2 .list .text2{
+	width: 1198px;
+	height: 60px;
+	background-color:#ffffff;
+	margin: 0 auto;
+	border-radius:10px ;
+	overflow: hidden;
+
+	margin-bottom: 10px;
+}
+.section .box2 .list .ck2{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 20px;
+	margin-left:20px;
+}
+.section .box2 .list .word1{
+	font-size:18px;
+	float: left;
+	margin-top: 15px;
+	margin-left:20px;
+}
+.section .box2 .list .img_2{
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: 20px;
+	margin-right:20px;
+}
