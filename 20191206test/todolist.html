@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="css/todolist.css">
+	</head>
+	<body>
+		<div class="header">
+			<h2>ToDoList</h2>
+			<input type="text" name="" id="content" value="添加ToDo" />
+		</div>
+		<div class="section">
+			<div class="box1">
+				<div class="title" >
+					<span class="doing" style="float: left;font-size:20px;font-weight: 600;margin-left: 20px;">正在进行</span>
+					<span class=" do_num">0</span>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="item" >
+
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="box2" >
+				<div class="title">
+					<span class="done"   style="float: left;font-size:20px;font-weight: 600;margin-left: 20px;">已经完成</span>
+					<span class="done_num">0</span>
+				</div>
+				<div class="list">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<!-- <script type="text/javascript" src="jQuery.js"></script> -->
+<script type="text/javascript">
+	let ocontent=document.querySelector("#content");
+	let oitem=document.getElementsByClassName("item")[0];
+	let odonum=document.getElementsByClassName("do_num")[0];
+	
+	
+	ocontent.onfocus=function(){
+		ocontent.value="";
+			
+			}
+	ocontent.onkeypress=function(evt){
+	        var e = evt || event;
+			let j=0;
+	        if(e.keyCode == 13 || e.keyCode == 10 && e.ctrlKey){
+			load();
+			j++;
+		odonum.innerHTML=j; 	
+	}
+	let ock=document.getElementsByClassName("ck1");
+	let oword=document.getElementsByClassName("word");
+	let list=document.getElementsByClassName("list"); 
+	for( let i=0;i<ock.length;i++){
+		ock[i].onclick=function(){
+			console.log(ock.length);
+			// console.log(list[0].innerHTML);
+				list[0].innerHTML +=
+				`
+					<div class="text2">
+						<div class="smallbox"></div>
+						<input type="image" name="" value="" class="ck2" src="img/img_1.jpg"/>
+						<span class="word1">${oword[i].innerHTML}</span>
+						<img src="img/delete.jpg" alt="" class="img_2">
+					</div>	
+				`
+			this.parentNode.remove();
+			let oimg2=document.getElementsByClassName("img_2");
+			for(let j=0;j<oimg2.length;j++){
+				oimg2[j].onclick=function(){
+					this.parentNode.remove();
+					load();
+				}
+			}	
+		}
+	}
+	let oimg=document.getElementsByClassName("img_1");
+	for(let j=0;j<oimg.length;j++){
+		oimg[j].onclick=function(){
+			this.parentNode.remove();
+		}
+	}	
+		
+	}
+	
+	function load(){
+		oitem.innerHTML +=
+			`
+			<div class="text1">
+				<div class="smallbox"></div>
+				<input type="checkbox" name="" class="ck1" value="1" />
+				<span class="word">${ocontent.value}</span>
+				<img src="img/delete.jpg" alt="" class="img_1">
+			</div>	
+		`
+	}
+	
+	
+	
+</script>
+
+<!-- <script type="text/javascript">
+	$(function(){
+		
+	   $("#content").focus(function(){
+		   $("#content").val("");
+	   })
+	   let i=0;
+	$("#content").keypress(function(evt){
+	        var e = evt || event;
+	        if(e.keyCode == 13 || e.keyCode == 10 && e.ctrlKey){
+	           load();
+			   i++;
+			  $(".do_num").html(i);
+		// 	    order();
+		// 		function   order(){
+		// 			for (let i = 0; i <  $(".do_num").length; i++) {
+		// 			return	$(".do_num").html(i+1);
+		// 	  }
+		// }
+		}
+		// let j=0;
+	// 	for(let i=0;i<$(".ck1").length;i++){
+	
+	// 		$(".ck1").eq(i).click(function(){
+	// 			$(".list").append(
+	// 			  `		<div class="text2">
+	// 					<div class="donebox"></div>
+	// 					<input type="image" name="" value="" class="ck2" src="img/img_1.jpg"/>
+	// 					<span class="word">${$("#content").val()}</span>
+	// 					<img src="img/delete.jpg" alt="" class="img_1">
+	// 					</div>		`
+	// 			 ) 
+				//  j++;
+				// $(".done_num").html(j);
+				
+				// $(".ck1").eq(i).parent().remove();
+				  // order();
+			// })		  
+			// }	
+			
+			
+	   //    for(let i=0;i<$(".img_1").length;i++){
+			 //  $(".img_1").eq(i).click(function(){
+				//   $(".img_1").eq(i).parent().remove();  
+		  // } 
+				// 	}
+				// 	}
+		opreate();
+			function   opreate(){
+				// load();
+				$(".text1").one("click",".ck1",function(){
+					$(".list").append(
+					  `		<div class="text2">
+							<div class="donebox"></div>
+							<input type="image" name="" value="" class="ck2" src="img/img_1.jpg"/>
+							<span class="word">${$("#content").val()}</span>
+							<img src="img/delete.jpg" alt="" class="img_1">
+							</div>		`
+					 ) 
+					$(this).parent().remove();
+				})
+			}
+			
+			
+		function load(){
+			$(".item").append(
+			 `			<div class="text1">
+									<div class="smallbox"></div>
+									<input type="checkbox" name="" class="ck1" value="" />
+									<span class="word">${$("#content").val()}</span>
+									<img src="img/delete.jpg" alt="" class="img_1">
+								</div>		`
+			) 
+		}		
+				
+				
+				
+				
+	    })
+		
+	})	
+</script> -->
